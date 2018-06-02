@@ -14,8 +14,8 @@ def shuffle():
     for color in ["黑桃", "方片", "梅花", "红桃"]:
         for value in base_poker:
             poker_list.append(Poker.Poker(color, value))
-    big_king = Poker.Poker("红", "Jokcer")
-    small_king = Poker.Poker("黑", "Jocker")
+    big_king = Poker.Poker("红", "joker")
+    small_king = Poker.Poker("黑", "joker")
     poker_list.append(big_king)
     poker_list.append(small_king)
     return poker_list
@@ -43,13 +43,13 @@ def deal_poker(pokers):
                 flag_c = False
                 flag_a = True
                 break
-        poker_list.remove(poker)
+        pokers.remove(poker)
     return a_poker, b_poker, c_poker, flag
 
 
 if __name__ == '__main__':
-    poker_list = shuffle()          # 初始化一副扑克牌
-    a_player_poker, b_player_poker, c_player_poker, flag_poke = deal_poker(poker_list)          # 发牌
+    pokers_list = shuffle()          # 初始化一副扑克牌
+    a_player_poker, b_player_poker, c_player_poker, flag_poke = deal_poker(pokers_list)          # 发牌
     a_player = Player.Player("farmer", a_player_poker)
     b_player = Player.Player("farmer", b_player_poker)
     c_player = Player.Player("farmer", c_player_poker)
@@ -63,6 +63,3 @@ if __name__ == '__main__':
     print(str(a_player))
     print(str(b_player))
     print(str(c_player))
-
-
-
