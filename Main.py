@@ -1,7 +1,7 @@
 # coding=utf-8
 import random
-from DouDiZhu.Tools import Poker
-from DouDiZhu.Tools import Player
+from GameRole import Poker
+from GameRole import Player
 
 
 def shuffle():
